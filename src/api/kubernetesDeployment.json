@@ -1,0 +1,22 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": { "name": "polycash-api" },
+  "spec": {
+    "replicas": 3,
+    "selector": { "matchLabels": { "app": "polycash-api" } },
+    "template": {
+      "metadata": { "labels": { "app": "polycash-api" } },
+      "spec": {
+        "terminationGracePeriodSeconds": 30,
+        "containers": [
+          {
+            "name": "polycash-api",
+            "image": "registry.digitalocean.com/neutrino/polycash-api",
+            "imagePullPolicy": "Always"
+          }
+        ]
+      }
+    }
+  }
+}

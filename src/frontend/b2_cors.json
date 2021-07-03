@@ -1,0 +1,24 @@
+b2 update-bucket --corsRules '[
+  {
+    "allowedHeaders": [
+      "authorization",
+      "access-control-allow-origin",
+      "x-bz-file-name",
+      "content-type",
+      "x-bz-content-sha1"
+    ],
+    "allowedOperations": ["b2_upload_file"],
+    "allowedOrigins": ["*"],
+    "corsRuleName": "uploadFromAnyOrigin",
+    "exposeHeaders": ["x-bz-content-sha1"],
+    "maxAgeSeconds": 3600
+  },
+  {
+    "allowedHeaders": ["authorization", "range"],
+    "allowedOperations": ["b2_download_file_by_id", "b2_download_file_by_name"],
+    "allowedOrigins": ["*"],
+    "corsRuleName": "downloadFromAnyOrigin",
+    "exposeHeaders": null,
+    "maxAgeSeconds": 3600
+  }
+]' polycash allPublic

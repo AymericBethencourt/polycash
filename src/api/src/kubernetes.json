@@ -1,0 +1,23 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": { "name": "polycash-images-converter" },
+  "spec": {
+    "replicas": 1,
+    "selector": { "matchLabels": { "app": "polycash-images-converter" } },
+    "template": {
+      "metadata": { "labels": { "app": "polycash-images-converter" } },
+      "spec": {
+        "terminationGracePeriodSeconds": 30,
+        "containers": [
+          {
+            "name": "polycash-images-converter",
+            "image": "registry.digitalocean.com/neutrino/polycash-images-converter",
+            "imagePullPolicy": "Always"
+          }
+        ],
+        "nodeSelector": { "doks.digitalocean.com/node-pool": "images-converter" }
+      }
+    }
+  }
+}
