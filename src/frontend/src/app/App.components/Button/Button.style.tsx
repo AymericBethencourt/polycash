@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components/macro'
 
-import { backgroundColorLight, primaryColor, subTextColor, textColor } from '../../../styles'
+import { backgroundColorLight, buttonColor, primaryColor, subTextColor, textColor } from '../../../styles'
 
 export const clickWave = (color: string) => keyframes`
   from {
@@ -21,7 +21,7 @@ export const ButtonStyled = styled.button<{ color: string; textColor: string }>`
   user-select: none;
   color: ${subTextColor};
   font-weight: bold;
-  background: ${(props) => (props.color !== 'transparent' ? primaryColor : 'transparent')};
+  background: ${(props) => (props.color !== 'transparent' ? buttonColor : 'transparent')};
 
   &.clicked {
     animation: ${(props) => clickWave(props.color)} 1250ms cubic-bezier(0.19, 1, 0.22, 1);

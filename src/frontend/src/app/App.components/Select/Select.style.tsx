@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components/macro'
 
-import { backgroundColorDark, textColor, borderColor } from '../../../styles'
+import { backgroundColorDark, textColor, borderColor, backgroundColorLight } from '../../../styles'
 
 export const clickWave = keyframes`
   from {  }
@@ -23,9 +23,11 @@ export const tiltDown = keyframes`
 
 export const SelectStyled = styled.div`
   border: none;
+  height: 40px;
+
   &.select-menu {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
@@ -45,7 +47,7 @@ export const SelectStyled = styled.div`
       pointer-events: none;
       user-select: none;
       opacity: 0;
-      padding: 9px 36px 8px 12px;
+      padding: 11px 12px 5px 46px;
       visibility: hidden;
       font-weight: 500;
       font-size: 14px;
@@ -63,13 +65,13 @@ export const SelectStyled = styled.div`
       transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
 
       li {
-        padding: 8px 36px 8px 12px;
+        padding: 11px 12px 5px 46px;
         cursor: pointer;
       }
     }
 
     & > ul {
-      background: #161729;
+      background: #EBEBEB;
       color: ${textColor}80;
       border-radius: 4px;
 
@@ -87,22 +89,22 @@ export const SelectStyled = styled.div`
       left: 0;
       top: 0;
       height: 40px;
-      border: 1px solid ${borderColor};
+      /* border: 1px solid ${borderColor}; */
       padding: 0;
       z-index: 1;
       width: 100%;
       display: block;
       overflow: hidden;
-      border-radius: 4px;
+      /* border-radius: 4px;
       color: ${textColor};
-      background: ${backgroundColorDark};
+      background: ${backgroundColorDark}; */
 
       em {
         --r: 45deg;
         display: block;
         position: absolute;
-        right: 12px;
-        top: 0;
+        left: 19px;
+        top: 3px;
         width: 7px;
         height: 7px;
         margin-top: 9px;
@@ -168,4 +170,31 @@ export const SelectStyled = styled.div`
       }
     }
   }
+`
+
+export const SelectBorder = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-color: ${backgroundColorLight};
+  content: '';
+  z-index: 0;
+`
+
+export const SelectInner = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100% - 40px);
+  height: 100%;
+  margin: 0 20px;
+  line-height: 40px;
+  font-weight: bold;
+  z-index: 1;
+  color: ${backgroundColorDark};
+  text-align: center;
+  overflow: hidden;
 `

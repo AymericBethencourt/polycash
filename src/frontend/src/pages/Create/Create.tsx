@@ -1,11 +1,13 @@
 import { Buckets, PrivateKey } from '@textile/hub'
 import { Button } from 'app/App.components/Button/Button.controller'
 import { Input } from 'app/App.components/Input/Input.controller'
+import { Select } from 'app/App.components/Select/Select.controller'
 import * as React from 'react'
 import { useState } from 'react'
 import { subTextColor } from 'styles'
 
-import { CreateGrid, CreateLink, CreateLinkGrid, CreateStyled, InputUpload, InputUploadGrid } from './Create.style'
+// prettier-ignore
+import { CreateGrid, CreateInputs, CreateLink, CreateLinkGrid, CreateStyled, InputUpload, InputUploadGrid, UploaderFileSelector, UploaderImage, UploaderLabel } from './Create.style'
 
 type Details = {
   address?: string
@@ -75,35 +77,56 @@ export const Create = () => {
 
   return (
     <CreateStyled>
-      <h1>Create a new Payment Link</h1>
-      <CreateGrid>
-        <div>
-          <Input
-            icon="address"
-            name="address"
-            placeholder="ETH Address"
-            type="text"
-            onChange={(e) => {
-              setDetails({ ...details, address: e.target.value })
-            }}
-            value={details.address}
-            onBlur={() => {}}
-            inputStatus={undefined}
-            errorMessage={undefined}
-          />
-          <Input
-            icon="currency"
-            name="currency"
-            placeholder="Currency"
-            type="text"
-            onChange={(e) => {
-              setDetails({ ...details, currency: e.target.value })
-            }}
-            value={details.currency}
-            onBlur={() => {}}
-            inputStatus={undefined}
-            errorMessage={undefined}
-          />
+      {details.image && (
+        <UploaderImage>
+          <img src={details.image} />
+        </UploaderImage>
+      )}
+
+      <UploaderFileSelector>
+        <UploaderLabel htmlFor="uploader">
+          <svg>
+            <use xlinkHref="/icons/sprites.svg#upload" />
+          </svg>
+          {isUploading ? 'Uploading...' : 'Upload with Filecoin'}
+        </UploaderLabel>
+        <input
+          id="uploader"
+          type="file"
+          accept="image/*"
+          onChange={(e) => e.target && e.target.files && e.target.files[0] && handleUpload(e.target.files[0])}
+        />
+      </UploaderFileSelector>
+
+      <CreateInputs>
+        <Input
+          icon="title"
+          name="title"
+          placeholder="Title"
+          type="text"
+          onChange={(e) => {
+            setDetails({ ...details, title: e.target.value })
+          }}
+          value={details.title}
+          onBlur={() => {}}
+          inputStatus={undefined}
+          errorMessage={undefined}
+        />
+        <Input
+          icon="description"
+          name="description"
+          placeholder="Description"
+          type="text"
+          onChange={(e) => {
+            setDetails({ ...details, description: e.target.value })
+          }}
+          value={details.description}
+          onBlur={() => {}}
+          inputStatus={undefined}
+          errorMessage={undefined}
+        />
+
+        <CreateGrid>
           <Input
             icon="amount"
             name="amount"
@@ -117,60 +140,33 @@ export const Create = () => {
             inputStatus={undefined}
             errorMessage={undefined}
           />
-        </div>
-        <div>
-          <Input
-            icon="title"
-            name="title"
-            placeholder="Title"
-            type="text"
-            onChange={(e) => {
-              setDetails({ ...details, title: e.target.value })
-            }}
-            value={details.title}
-            onBlur={() => {}}
-            inputStatus={undefined}
-            errorMessage={undefined}
-          />
-          <Input
-            icon="description"
-            name="description"
-            placeholder="Description"
-            type="text"
-            onChange={(e) => {
-              setDetails({ ...details, description: e.target.value })
-            }}
-            value={details.description}
-            onBlur={() => {}}
-            inputStatus={undefined}
-            errorMessage={undefined}
-          />
-          <InputUploadGrid>
-            <Input
-              icon="image"
-              name="image"
-              placeholder="Image"
-              type="text"
-              onChange={(e) => {
-                setDetails({ ...details, image: e.target.value })
-              }}
-              value={details.image}
-              onBlur={() => {}}
-              inputStatus={undefined}
-              errorMessage={undefined}
-            />
 
-            <InputUpload
-              type="file"
-              className={`custom-file-input${isUploading ? ' custom-file-uploading' : ''}`}
-              onChange={(e) => e.target && e.target.files && e.target.files[0] && handleUpload(e.target.files[0])}
-            />
-          </InputUploadGrid>
-        </div>
-      </CreateGrid>
-      <h1>Your Payment Link</h1>
+          <Select
+            options={['miMATIC', 'MATIC']}
+            defaultOption={details.currency}
+            selectCallback={(e) => {
+              setDetails({ ...details, currency: e })
+            }}
+          />
+        </CreateGrid>
+      </CreateInputs>
+
+      <Input
+        icon="address"
+        name="address"
+        placeholder="ETH Address"
+        type="text"
+        onChange={(e) => {
+          setDetails({ ...details, address: e.target.value })
+        }}
+        value={details.address}
+        onBlur={() => {}}
+        inputStatus={undefined}
+        errorMessage={undefined}
+      />
+
       <CreateLinkGrid>
-        <CreateLink>{url}</CreateLink>
+        <CreateLink type="text" value={url} />
         <Button
           type="button"
           text={copied ? 'Copied' : 'Copy'}
@@ -186,5 +182,3 @@ export const Create = () => {
     </CreateStyled>
   )
 }
-
-// https://polycash.net/buy?address=0x9a3FD1E5b849A22504020385a8e4315B1AF12f8f&currency=miMATIC&amount=1&title=Test%20title&description=Test%20description&image=https://hub.textile.io/thread/bafkv4t2uqgblrc2gsgjrgc7gg2hthcu5jhnedx46gfpjj3axe6ahtuy/buckets/bafzbeig3vsanyp6xhzyduubyqh3zas4qapbc7hv75lxsngwrxxlnvfgtli/favicon.png

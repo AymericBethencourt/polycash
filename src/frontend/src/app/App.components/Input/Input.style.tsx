@@ -5,7 +5,7 @@ import { backgroundColorDeep, backgroundColorLight, borderColor, downColor, plac
 
 export const InputStyled = styled.div`
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `
 
 export const InputComponent = styled.input`

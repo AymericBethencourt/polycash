@@ -816,10 +816,14 @@
     </symbol>
     <symbol id="amount" viewBox="0 0 24 24">
         <g id="Outline_Icons">
-            <line fill="none" class="a" x1="3.75" y1="8.248" x2="23.25" y2="8.248"></line>
-            <line fill="none" class="a" x1="0.75" y1="17.248" x2="20.25" y2="17.248"></line>
-            <line fill="none" class="a" x1="12" y1="0.748" x2="4.5" y2="23.248"></line>
-            <line fill="none" class="a" x1="19.5" y1="0.748" x2="12" y2="23.248"></line>
+            <rect fill="none" class="a" x="6.75" y="18.75" width="12" height="4.5" rx="0.75" ry="0.75"></rect>
+            <rect fill="none" class="a" x="8.25" y="14.25" width="12" height="4.5" rx="0.75" ry="0.75"></rect>
+            <rect fill="none" class="a" x="3.75" y="9.75" width="12" height="4.5" rx="0.75" ry="0.75"></rect>
+            <rect fill="none" class="a" x="5.25" y="5.25" width="12" height="4.5" rx="0.75" ry="0.75"></rect>
+            <line fill="none" class="a" x1="21.75" y1="7.5" x2="21.75" y2="10.5"></line>
+            <line fill="none" class="a" x1="20.25" y1="9" x2="23.25" y2="9"></line>
+            <line fill="none" class="a" x1="2.25" y1="0.75" x2="2.25" y2="3.75"></line>
+            <line fill="none" class="a" x1="0.75" y1="2.25" x2="3.75" y2="2.25"></line>
         </g>
         <g id="Invisible_Shape">
             <rect fill="none" stroke="none" width="24" height="24"></rect>
@@ -851,6 +855,80 @@
             <path fill="none" class="a" d="M22.477,21.75a1.5,1.5,0,0,1-1.5,1.5H3.023a1.5,1.5,0,0,1-1.5-1.5V2.25a1.5,1.5,0,0,1,1.5-1.5h15a1.5,1.5,0,0,1,1.047.426l2.955,2.883a1.5,1.5,0,0,1,.452,1.074Z"></path>
             <circle fill="none" class="a" cx="8.273" cy="7.5" r="2.25"></circle>
             <path fill="none" class="a" d="M18.813,18.2l-3.925-5.888a1.011,1.011,0,0,0-1.671-.019l-2.691,3.845L8.858,14.8a1.011,1.011,0,0,0-1.474.229L5.273,18.2"></path>
+        </g>
+        <g id="Invisible_Shape">
+            <rect fill="none" stroke="none" width="24" height="24"></rect>
+        </g>
+    </symbol>
+    <symbol id="upload" viewBox="0 0 24 24">
+        <g id="Outline_Icons">
+            <path d="M15.75 9.75L12 6L8.25 9.75" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 17.25V6" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 23.25C18.2132 23.25 23.25 18.2132 23.25 12C23.25 5.7868 18.2132 0.75 12 0.75C5.7868 0.75 0.75 5.7868 0.75 12C0.75 18.2132 5.7868 23.25 12 23.25Z" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <g id="Invisible_Shape">
+            <rect fill="none" stroke="none" width="24" height="24"></rect>
+        </g>
+    </symbol>
+    <symbol id="XXXX" viewBox="0 0 24 24">
+        <g id="Outline_Icons">
+
+        </g>
+        <g id="Invisible_Shape">
+            <rect fill="none" stroke="none" width="24" height="24"></rect>
+        </g>
+    </symbol>
+    <symbol id="XXXX" viewBox="0 0 24 24">
+        <g id="Outline_Icons">
+
+        </g>
+        <g id="Invisible_Shape">
+            <rect fill="none" stroke="none" width="24" height="24"></rect>
+        </g>
+    </symbol>
+    <symbol id="XXXX" viewBox="0 0 24 24">
+        <g id="Outline_Icons">
+
+        </g>
+        <g id="Invisible_Shape">
+            <rect fill="none" stroke="none" width="24" height="24"></rect>
+        </g>
+    </symbol>
+    <symbol id="XXXX" viewBox="0 0 24 24">
+        <g id="Outline_Icons">
+
+        </g>
+        <g id="Invisible_Shape">
+            <rect fill="none" stroke="none" width="24" height="24"></rect>
+        </g>
+    </symbol>
+    <symbol id="XXXX" viewBox="0 0 24 24">
+        <g id="Outline_Icons">
+
+        </g>
+        <g id="Invisible_Shape">
+            <rect fill="none" stroke="none" width="24" height="24"></rect>
+        </g>
+    </symbol>
+    <symbol id="XXXX" viewBox="0 0 24 24">
+        <g id="Outline_Icons">
+
+        </g>
+        <g id="Invisible_Shape">
+            <rect fill="none" stroke="none" width="24" height="24"></rect>
+        </g>
+    </symbol>
+    <symbol id="XXXX" viewBox="0 0 24 24">
+        <g id="Outline_Icons">
+
+        </g>
+        <g id="Invisible_Shape">
+            <rect fill="none" stroke="none" width="24" height="24"></rect>
+        </g>
+    </symbol>
+    <symbol id="XXXX" viewBox="0 0 24 24">
+        <g id="Outline_Icons">
+
         </g>
         <g id="Invisible_Shape">
             <rect fill="none" stroke="none" width="24" height="24"></rect>

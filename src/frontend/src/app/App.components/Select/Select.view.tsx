@@ -2,7 +2,7 @@ import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 
-import { SelectStyled } from './Select.style'
+import { SelectBorder, SelectInner, SelectStyled } from './Select.style'
 
 type SelectViewProps = {
   options: string[]
@@ -35,16 +35,26 @@ export const SelectView = ({ options, defaultOption, selectCallback }: SelectVie
 
   return (
     <SelectStyled className={classes.join(' ')} onClick={() => handleClick()}>
-      <select data-menu defaultValue={selectedIndex}>
-        {options.map((option) => (
-          <option key={option}>{option}</option>
-        ))}
-      </select>
-      <div className="selector">
-        <em></em>
-        <ul style={{ transform: `translateY(-${selectedIndex * 36}px)` }}>
+      <SelectBorder />
+      <SelectInner>
+        <select data-menu defaultValue={selectedIndex}>
           {options.map((option) => (
-            <li key={option}>{option}</li>
+            <option key={option}>{option}</option>
+          ))}
+        </select>
+      </SelectInner>
+      <div className="selector">
+        <em />
+        <ul style={{ transform: `translateY(-${selectedIndex * 36}px)` }}>
+          {options.map((option, i) => (
+            <li
+              key={option}
+              onClick={() => {
+                if (selectedIndex === i && classes.includes('open')) handleSelect(i)
+              }}
+            >
+              {option}
+            </li>
           ))}
         </ul>
       </div>
