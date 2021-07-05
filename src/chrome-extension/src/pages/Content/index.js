@@ -12,7 +12,7 @@ $(document).ready(function () {
         let username = $(this).find("span:contains('@')").text();
         if(username) username = username.replace('@', '');
 
-        $(this).append(`<a class="polycash-tip" href="https://polycash.net/buy?username=${username}" target="_blank" style="color: #6e767d;
+        $(this).append(`<a class="polycash-tip" href="https://polycash.net/buy?username=${username}&currency=MATIC&amount=0.1&title=Twitter%20Tip&description=Support%20this%20user%20with%20a%20tip&image=https://hub.textile.io/thread/bafkv4t2uqgblrc2gsgjrgc7gg2hthcu5jhnedx46gfpjj3axe6ahtuy/buckets/bafzbeig3vsanyp6xhzyduubyqh3zas4qapbc7hv75lxsngwrxxlnvfgtli/Frame%201.png" target="_blank" style="color: #6e767d;
         position: absolute;
         bottom: 13px;
         right: 30px;

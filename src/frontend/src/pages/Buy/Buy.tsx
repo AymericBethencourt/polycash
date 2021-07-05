@@ -8,7 +8,8 @@ import { BuyMeta } from './Buy.meta'
 // prettier-ignore
 import { Bar, BuyAddress, BuyAmount, BuyButton, BuyCurrency, BuyDescription, BuyDollar, BuyGrid, BuyInputs, BuyStyled, BuyTitle, LinkAddress, UploaderImage } from './Buy.style'
 
-//http://localhost:3000/buy?address=0x93843E8bd6D2E1Ca9fD2b54Cf4dcFbd15F4d5E85&currency=MATIC&amount=0.1&title=Powdur&description=Test%20description&image=https://hub.textile.io/thread/bafkv4t2uqgblrc2gsgjrgc7gg2hthcu5jhnedx46gfpjj3axe6ahtuy/buckets/bafzbeig3vsanyp6xhzyduubyqh3zas4qapbc7hv75lxsngwrxxlnvfgtli/payment-links-powdur%20(1).jpg
+// http://localhost:3000/buy?address=0x93843E8bd6D2E1Ca9fD2b54Cf4dcFbd15F4d5E85&currency=MATIC&amount=0.1&title=Powdur&description=Test%20description&image=https://hub.textile.io/thread/bafkv4t2uqgblrc2gsgjrgc7gg2hthcu5jhnedx46gfpjj3axe6ahtuy/buckets/bafzbeig3vsanyp6xhzyduubyqh3zas4qapbc7hv75lxsngwrxxlnvfgtli/payment-links-powdur%20(1).jpg
+// https://polycash.net/buy?address=0x93843E8bd6D2E1Ca9fD2b54Cf4dcFbd15F4d5E85&currency=MATIC&amount=0.1&title=Powdur&description=Test%20description&image=https://hub.textile.io/thread/bafkv4t2uqgblrc2gsgjrgc7gg2hthcu5jhnedx46gfpjj3axe6ahtuy/buckets/bafzbeig3vsanyp6xhzyduubyqh3zas4qapbc7hv75lxsngwrxxlnvfgtli/payment-links-powdur%20(1).jpg
 
 function useQuery() {
   return new URLSearchParams(useLocation().search)
@@ -28,6 +29,8 @@ export const Buy = () => {
   const username = query.get('username') || undefined
 
   const pay = async () => {
+    //@ts-ignore
+    await window.ethereum.enable()
     //@ts-ignore
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     const signer = provider.getSigner()

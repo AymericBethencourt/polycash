@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet'
 
 export const AppMeta = () => (
   <Helmet>
-    <title>PayID Generator and Manager | polycash.net</title>
-    <meta name="description" content="PayID Generator and Manager" />
+    <title>Polycash.net</title>
+    <meta name="description" content="Payment Links" />
     <meta property="og:title" content="polycash.net" />
     <meta property="og:url" content="https://polycash.net" />
     <meta property="og:site_name" content="polycash.net" />
