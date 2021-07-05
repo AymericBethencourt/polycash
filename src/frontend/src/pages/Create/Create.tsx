@@ -21,7 +21,7 @@ type Details = {
 export const Create = () => {
   const [details, setDetails] = useState<Details>({
     address: undefined,
-    currency: 'miMATIC',
+    currency: 'MATIC',
     amount: undefined,
     title: undefined,
     description: undefined,
