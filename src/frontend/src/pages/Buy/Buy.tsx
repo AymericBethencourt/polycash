@@ -2,10 +2,11 @@ import { ethers } from 'ethers'
 import * as React from 'react'
 import { useState } from 'react'
 import { useLocation } from 'react-router'
+import { Link } from 'react-router-dom'
 import { BuyMeta } from './Buy.meta'
 
 // prettier-ignore
-import { Bar, BuyAddress, BuyAmount, BuyButton, BuyCurrency, BuyDescription, BuyGrid, BuyInputs, BuyStyled, BuyTitle, UploaderImage } from './Buy.style'
+import { Bar, BuyAddress, BuyAmount, BuyButton, BuyCurrency, BuyDescription, BuyDollar, BuyGrid, BuyInputs, BuyStyled, BuyTitle, LinkAddress, UploaderImage } from './Buy.style'
 
 //http://localhost:3000/buy?address=0x93843E8bd6D2E1Ca9fD2b54Cf4dcFbd15F4d5E85&currency=MATIC&amount=0.1&title=Powdur&description=Test%20description&image=https://hub.textile.io/thread/bafkv4t2uqgblrc2gsgjrgc7gg2hthcu5jhnedx46gfpjj3axe6ahtuy/buckets/bafzbeig3vsanyp6xhzyduubyqh3zas4qapbc7hv75lxsngwrxxlnvfgtli/payment-links-powdur%20(1).jpg
 
@@ -18,12 +19,13 @@ export const Buy = () => {
   const [loading, setLoading] = useState(false)
   const [sent, setSent] = useState(false)
 
-  const address = query.get('address') || 'No address'
+  const address = query.get('address') || undefined
   const currency = query.get('currency') || 'No currency'
   const amount = query.get('amount') || 'No amount'
   const title = query.get('title') || 'No title'
   const description = query.get('description') || 'No description'
   const image = query.get('image') || undefined
+  const username = query.get('username') || undefined
 
   const pay = async () => {
     //@ts-ignore
@@ -81,7 +83,21 @@ export const Buy = () => {
           <Bar />
         </BuyGrid>
 
-        <BuyAddress>Send to {address}</BuyAddress>
+        <BuyDollar>{`($${(parseFloat(amount) * 1.11).toFixed(2)})`}</BuyDollar>
+
+        {address ? (
+          <BuyAddress>Send to {address}</BuyAddress>
+        ) : (
+          <LinkAddress>
+            This user, <b>{username}</b>, has not linked an ETH address yet.
+            <br />
+            If this is you, you can{' '}
+            <Link to={`/link?username=${username}`}>
+              <u>link your address now</u>
+            </Link>
+            .
+          </LinkAddress>
+        )}
       </BuyInputs>
 
       <BuyButton type="button" loading={loading} sent={sent} onClick={() => pay()}>

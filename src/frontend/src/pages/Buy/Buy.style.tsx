@@ -87,6 +87,12 @@ export const BuyGrid = styled.div`
   grid-gap: 10px;
 `
 
+export const BuyDollar = styled.div`
+  color: ${descTextColor};
+  font-size: 12px;
+  margin-top: 5px;
+`
+
 export const BuyTitle = styled.div`
   font-size: 16px;
   font-weight: bold;
@@ -113,6 +119,12 @@ export const BuyAddress = styled.div`
   margin-top: 40px;
   font-size: 12px;
   color: ${descTextColor};
+`
+
+export const LinkAddress = styled.div`
+  margin-top: 40px;
+  font-size: 12px;
+  color: red;
 `
 
 const stroke = keyframes`

@@ -875,33 +875,34 @@
             <path d="m.65909042 4.04356308 2.43156433 2.43156433 5.83150483-5.83150482" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
         </g>
     </symbol>
-    <symbol id="XXXX" viewBox="0 0 24 24">
+    <symbol id="twitter" viewBox="0 0 40 40">
         <g id="Outline_Icons">
-
+            <path d="M38.6333 11.1833L35.1333 9.68334L36.9666 5.68334L32.7 7.10001C31.341 5.83322 29.5577 5.11991 27.7 5.10001C25.7122 5.10441 23.8071 5.896 22.4015 7.30157C20.996 8.70714 20.2044 10.6122 20.2 12.6V14.2667C14.3 15.4833 9.14997 12.2667 4.36663 6.76667C3.5333 11.2111 4.36663 14.5445 6.86663 16.7667L1.3833 15.9333C1.59514 17.6987 2.42054 19.3334 3.71527 20.552C5.00999 21.7706 6.69173 22.4954 8.46663 22.6L3.8833 24.2667C5.54997 27.6 8.5833 28.1167 12.6333 28.4333C9.323 30.6911 5.38926 31.8567 1.3833 31.7667C22.65 41.2167 35.1333 27.3333 35.1333 15.1V13.7167L38.6333 11.1833Z" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </g>
         <g id="Invisible_Shape">
-            <rect fill="none" stroke="none" width="24" height="24"></rect>
+            <rect fill="none" stroke="none" width="40" height="40"></rect>
         </g>
     </symbol>
-    <symbol id="XXXX" viewBox="0 0 24 24">
+    <symbol id="facebook" viewBox="0 0 40 40">
         <g id="Outline_Icons">
-
+            <path d="M30.2168 12.9167H23.1168V9.73334C23.0934 9.50088 23.1192 9.2661 23.1924 9.04424C23.2656 8.82238 23.3847 8.6184 23.5419 8.44553C23.699 8.27265 23.8908 8.13475 24.1047 8.04077C24.3186 7.94679 24.5498 7.89883 24.7834 7.9H29.7835V1.23334H22.5668C16.0168 1.23334 14.7834 6.23334 14.7834 9.33334V12.9167H9.78345V19.5833H14.7834V38.75H23.1168V19.5833H29.5334L30.2168 12.9167Z" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </g>
         <g id="Invisible_Shape">
-            <rect fill="none" stroke="none" width="24" height="24"></rect>
+            <rect fill="none" stroke="none" width="40" height="40"></rect>
         </g>
     </symbol>
-    <symbol id="XXXX" viewBox="0 0 24 24">
+    <symbol id="youtube" viewBox="0 0 40 40">
         <g id="Outline_Icons">
-
+            <path d="M38.75 12.4C38.75 10.8794 38.146 9.42113 37.0707 8.34592C35.9955 7.27071 34.5372 6.66666 33.0167 6.66666H6.98333C6.23042 6.66666 5.48488 6.81496 4.78928 7.10309C4.09368 7.39121 3.46164 7.81353 2.92925 8.34592C1.85405 9.42113 1.25 10.8794 1.25 12.4V27.6C1.25 29.1206 1.85405 30.5789 2.92925 31.6541C3.46164 32.1865 4.09368 32.6088 4.78928 32.8969C5.48488 33.185 6.23042 33.3333 6.98333 33.3333H33.0167C34.5372 33.3333 35.9955 32.7293 37.0707 31.6541C38.146 30.5789 38.75 29.1206 38.75 27.6V12.4ZM15.8333 26.5667V12.1333L27.1167 19.35L15.8333 26.5667Z" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </g>
         <g id="Invisible_Shape">
-            <rect fill="none" stroke="none" width="24" height="24"></rect>
+            <rect fill="none" stroke="none" width="40" height="40"></rect>
         </g>
     </symbol>
-    <symbol id="XXXX" viewBox="0 0 24 24">
+    <symbol id="link" viewBox="0 0 24 24">
         <g id="Outline_Icons">
-
+            <path fill="none" class="a" d="M9.364,18.5l-.932.932a4.5,4.5,0,0,1-6.364-6.364L6.841,8.294a4.5,4.5,0,0,1,6.825,5.825"></path>
+            <path fill="none" class="a" d="M14.818,5.567l.75-.75a4.5,4.5,0,0,1,6.364,6.364l-4.773,4.773a4.5,4.5,0,0,1-6.824-5.826"></path>
         </g>
         <g id="Invisible_Shape">
             <rect fill="none" stroke="none" width="24" height="24"></rect>

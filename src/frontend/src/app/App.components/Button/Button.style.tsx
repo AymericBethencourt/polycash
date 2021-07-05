@@ -12,7 +12,7 @@ export const clickWave = (color: string) => keyframes`
 `
 
 export const ButtonStyled = styled.button<{ color: string; textColor: string }>`
-  height: 36px;
+  height: 40px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -57,7 +57,7 @@ export const ButtonText = styled.div`
   text-align: center;
   margin: auto;
   display: inline-block;
-  line-height: 36px;
+  line-height: 40px;
 `
 
 export const ButtonIcon = styled.svg``
