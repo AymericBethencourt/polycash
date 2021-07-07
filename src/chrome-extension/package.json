@@ -1,12 +1,6 @@
 {
-  "name": "youtube-alternative-income",
-  "version": "4.0.1",
-  "description": "Alternative Youtube income for creators",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/waylad/Alternative-Youtube-Income.git"
-  },
+  "name": "polycash-chrome-extension",
+  "version": "1.0.0",
   "scripts": {
     "build": "node utils/build.js",
     "start": "node utils/webserver.js",

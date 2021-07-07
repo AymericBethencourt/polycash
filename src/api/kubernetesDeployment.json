@@ -12,7 +12,7 @@
         "containers": [
           {
             "name": "polycash-api",
-            "image": "registry.digitalocean.com/neutrino/polycash-api",
+            "image": "registry.digitalocean.com/neut/polycash-api",
             "imagePullPolicy": "Always"
           }
         ]
