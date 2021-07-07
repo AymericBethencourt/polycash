@@ -6,6 +6,10 @@ import axios from 'axios'
 import * as React from 'react'
 import { useLocation } from 'react-router'
 import { subTextColor } from 'styles'
+import { useDispatch } from 'react-redux'
+import { showToaster } from 'app/App.components/Toaster/Toaster.actions'
+import { SUCCESS, ERROR } from 'app/App.components/Toaster/Toaster.constants'
+import { useState } from 'react'
 
 function useQuery() {
   return new URLSearchParams(useLocation().search)
@@ -15,15 +19,22 @@ export const Link = () => {
   let query = useQuery()
   const username = query.get('username') || '(unknown)'
   let [url, setUrl] = React.useState('')
+  const dispatch = useDispatch()
+  const [loading, setLoading] = useState(false)
 
   async function linkUsername() {
     try {
+      setLoading(true)
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/set-address`, {
         username,
         url,
       })
-      alert(response)
+      console.log(response)
+      setLoading(false)
+      dispatch(showToaster(SUCCESS, 'DONE', 'Account linked'))
     } catch (error) {
+      setLoading(false)
+      dispatch(showToaster(ERROR, error.message, ''))
       console.error(error)
     }
   }
@@ -83,7 +94,7 @@ export const Link = () => {
           type="button"
           text="Link"
           icon="address"
-          loading={false}
+          loading={loading}
           onClick={() => linkUsername()}
           color={subTextColor}
         />

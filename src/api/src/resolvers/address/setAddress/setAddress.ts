@@ -20,7 +20,11 @@ export const setAddress = async (ctx: Context, next: Next): Promise<void> => {
   let address
   let browser = null
   try {
-    browser = await puppeteer.launch() //{ headless: true }
+    browser = await puppeteer.launch({
+      headless: true,
+      executablePath: process.env.CHROME_BIN || undefined,
+      args: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-dev-shm-usage'],
+    }) //{ headless: true }
     const page = await browser.newPage()
     page.setUserAgent(
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4182.0 Safari/537.36',

@@ -29,7 +29,7 @@ export const LinkGrid = styled.div`
 
 export const LinkInputGrid = styled.div`
   display: grid;
-  grid-template-columns: auto 100px;
+  grid-template-columns: auto 120px;
   grid-gap: 10px;
   margin-top: 30px;
 `

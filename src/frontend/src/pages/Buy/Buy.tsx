@@ -1,7 +1,10 @@
+import { showToaster } from 'app/App.components/Toaster/Toaster.actions'
+import { ERROR } from 'app/App.components/Toaster/Toaster.constants'
 import axios from 'axios'
 import { ethers } from 'ethers'
 import * as React from 'react'
 import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useAxios } from 'use-axios-client'
@@ -22,6 +25,7 @@ export const Buy = () => {
   const [loading, setLoading] = useState(false)
   const [sent, setSent] = useState(false)
   const [address, setAddress] = useState(query.get('address') || undefined)
+  const dispatch = useDispatch()
 
   const currency = query.get('currency') || 'No currency'
   const amount = query.get('amount') || 'No amount'
@@ -51,7 +55,9 @@ export const Buy = () => {
         console.log(response.data.address)
         setAddress(response.data.address)
       } catch (e) {
-        alert(e.message)
+        dispatch(showToaster(ERROR, 'Address not found', 'This user must first link an ETH address'))
+        console.error(e)
+        // alert(e.message)
       }
     }
 
@@ -82,7 +88,8 @@ export const Buy = () => {
         setSent(true)
       })
       .catch((e) => {
-        alert(e.message)
+        dispatch(showToaster(ERROR, e.message, ''))
+        // alert(e.message)
         setLoading(false)
       })
   }

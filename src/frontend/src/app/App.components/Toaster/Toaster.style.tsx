@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components/macro'
 
-import { backgroundColorDark, subTextColor, textColor } from '../../../styles'
+import { backgroundColorLight, descTextColor, textColor } from '../../../styles'
 
 export const ToasterStyled = styled.div`
   position: fixed;
@@ -12,7 +12,7 @@ export const ToasterStyled = styled.div`
   margin: 10px;
   padding: 21px 20px;
   border-radius: 4px;
-  background-color: ${backgroundColorDark};
+  background-color: ${backgroundColorLight};
   box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.2);
   transform: translate3d(0px, 0, 0);
   transition: transform 1s ease-in-out;
@@ -83,7 +83,7 @@ export const ToasterTitle = styled.div`
 `
 
 export const ToasterMessage = styled.div`
-  color: ${subTextColor};
+  color: ${descTextColor};
 `
 
 export const ToasterClose = styled.div`

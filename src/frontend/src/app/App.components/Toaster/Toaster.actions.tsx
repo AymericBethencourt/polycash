@@ -9,7 +9,7 @@ export const showToaster = (status: string, title: string, message: string) => (
     dispatch({
       type: SHOW_TOASTER,
       status,
-      title: title.indexOf('jwt malformed') >= 0 ? 'Please first login!' : title,
+      title,
       message,
     })
     setTimeout(() => {
