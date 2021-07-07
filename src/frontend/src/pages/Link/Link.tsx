@@ -1,11 +1,11 @@
+// prettier-ignore
+import { LinkGrid, LinkInputGrid, LinkStyled } from './Link.style'
 import { Button } from 'app/App.components/Button/Button.controller'
 import { Input } from 'app/App.components/Input/Input.controller'
+import axios from 'axios'
 import * as React from 'react'
 import { useLocation } from 'react-router'
 import { subTextColor } from 'styles'
-
-// prettier-ignore
-import { LinkGrid, LinkInputGrid, LinkStyled } from './Link.style'
 
 function useQuery() {
   return new URLSearchParams(useLocation().search)
@@ -15,6 +15,18 @@ export const Link = () => {
   let query = useQuery()
   const username = query.get('username') || '(unknown)'
   let [url, setUrl] = React.useState('')
+
+  async function linkUsername() {
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/set-address`, {
+        username,
+        url,
+      })
+      alert(response)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   return (
     <LinkStyled>
@@ -67,7 +79,14 @@ export const Link = () => {
           inputStatus={undefined}
           errorMessage={undefined}
         />
-        <Button type="button" text="Link" icon="address" loading={false} onClick={() => {}} color={subTextColor} />
+        <Button
+          type="button"
+          text="Link"
+          icon="address"
+          loading={false}
+          onClick={() => linkUsername()}
+          color={subTextColor}
+        />
       </LinkInputGrid>
     </LinkStyled>
   )

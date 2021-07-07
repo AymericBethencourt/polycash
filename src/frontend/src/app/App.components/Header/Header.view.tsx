@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { PublicUser } from 'shared/user/PublicUser'
 
 // prettier-ignore
 import { HeaderStyled } from './Header.style'

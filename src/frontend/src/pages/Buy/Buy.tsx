@@ -1,10 +1,12 @@
+import axios from 'axios'
 import { ethers } from 'ethers'
 import * as React from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
-import { BuyMeta } from './Buy.meta'
+import { useAxios } from 'use-axios-client'
 
+import { BuyMeta } from './Buy.meta'
 // prettier-ignore
 import { Bar, BuyAddress, BuyAmount, BuyButton, BuyCurrency, BuyDescription, BuyDollar, BuyGrid, BuyInputs, BuyStyled, BuyTitle, LinkAddress, UploaderImage } from './Buy.style'
 
@@ -19,14 +21,42 @@ export const Buy = () => {
   let query = useQuery()
   const [loading, setLoading] = useState(false)
   const [sent, setSent] = useState(false)
+  const [address, setAddress] = useState(query.get('address') || undefined)
 
-  const address = query.get('address') || undefined
   const currency = query.get('currency') || 'No currency'
   const amount = query.get('amount') || 'No amount'
   const title = query.get('title') || 'No title'
   const description = query.get('description') || 'No description'
   const image = query.get('image') || undefined
-  const username = query.get('username') || undefined
+  const twitter = query.get('twitter') || undefined
+  const facebook = query.get('facebook') || undefined
+  const youtube = query.get('youtube') || undefined
+
+  const { data } = useAxios({
+    url: `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${currency}&tsyms=USDT`,
+  })
+
+  const username = twitter || facebook || youtube
+
+  // TODO: implement for all pairs
+  // @ts-ignore
+  const rate = data && data.RAW ? data.RAW.MATIC.USDT.PRICE : 0
+
+  useEffect(() => {
+    async function getAddress() {
+      try {
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/get-address`, {
+          username,
+        })
+        console.log(response.data.address)
+        setAddress(response.data.address)
+      } catch (e) {
+        alert(e.message)
+      }
+    }
+
+    if (username) getAddress()
+  }, [])
 
   const pay = async () => {
     //@ts-ignore
@@ -86,13 +116,13 @@ export const Buy = () => {
           <Bar />
         </BuyGrid>
 
-        <BuyDollar>{`($${(parseFloat(amount) * 1.11).toFixed(2)})`}</BuyDollar>
+        <BuyDollar>{`($${(parseFloat(amount) * rate).toFixed(2)})`}</BuyDollar>
 
         {address ? (
           <BuyAddress>Send to {address}</BuyAddress>
         ) : (
           <LinkAddress>
-            This user, <b>{username}</b>, has not linked an ETH address yet.
+            This user <b>{username}</b> has not linked an ETH address yet.
             <br />
             If this is you, you can{' '}
             <Link to={`/link?username=${username}`}>

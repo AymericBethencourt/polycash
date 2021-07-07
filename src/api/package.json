@@ -39,6 +39,7 @@
     "koa-bodyparser": "^4.3.0",
     "koa-helmet": "^5.2.0",
     "mongoose": "^5.9.20",
+    "puppeteer": "^10.1.0",
     "rate-limiter-flexible": "^2.1.7",
     "reflect-metadata": "^0.1.13",
     "speakingurl": "^14.0.1",

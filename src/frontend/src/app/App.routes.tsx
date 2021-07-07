@@ -1,6 +1,5 @@
 import { Buy } from 'pages/Buy/Buy'
 import { Create } from 'pages/Create/Create'
-import { Error404 } from 'pages/Error404/Error404.controller'
 import { Home } from 'pages/Home/Home'
 import { Link } from 'pages/Link/Link'
 import React from 'react'
@@ -19,9 +18,6 @@ export const AppRoutes = ({ location }: any) => (
     </Route>
     <Route exact path="/link">
       <Link />
-    </Route>
-    <Route>
-      <Error404 />
     </Route>
   </Switch>
 )

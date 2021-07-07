@@ -5,7 +5,6 @@ import { history } from './App.store'
 export const redirect = (path: string) => (dispatch: any, getState: any) => {
   if (path.indexOf('$resetPasswordToken') >= 0) {
     const state: State = getState()
-    path = path.replace('$resetPasswordToken', state.auth.resetPasswordToken as string)
   }
   dispatch(history.push(path))
 }
